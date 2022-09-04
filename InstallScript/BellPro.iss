@@ -1,5 +1,5 @@
 #define MyAppName "BellPro"
-#define MyAppVersion "3.2"
+#define MyAppVersion "3.3"
 #define MyAppPublisher "Tecomatic"
 #define MyAppURL "http://tecomatic.rs"
 #define MyAppExeName "BellPro.exe"
@@ -42,6 +42,7 @@ Source: ".\base\base.mdb"; DestDir: "{app}\base\"; Flags: ignoreversion recurses
 Source: ".\dll\mscomm32.ocx"; DestDir: "{commonpf32}\{#MyAppName}"; Flags: restartreplace ignoreversion regserver 32bit
 Source: ".\dll\msdatgrd.ocx"; DestDir: "{commonpf32}\{#MyAppName}"; Flags: restartreplace ignoreversion regserver 32bit
 Source: ".\BellPro.exe"; DestDir: "{commonpf32}\{#MyAppName}"; Flags: ignoreversion
+Source: ".\config.ini"; DestDir: "{commonpf32}\{#MyAppName}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
