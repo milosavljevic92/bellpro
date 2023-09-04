@@ -1,5 +1,5 @@
 #define MyAppName "BellPro"
-#define MyAppVersion "3.3"
+#define MyAppVersion "4.0"
 #define MyAppPublisher "Tecomatic"
 #define MyAppURL "http://tecomatic.rs"
 #define MyAppExeName "BellPro.exe"
@@ -16,7 +16,7 @@ DefaultDirName={commonpf32}\{#MyAppName}
 DefaultGroupName=Bell Pro
 AllowNoIcons=yes
 OutputDir=.\setup\
-OutputBaseFilename=BellPro_setup_x86
+OutputBaseFilename=BellPro_setup_40_x86
 Compression=lzma
 SolidCompression=yes  
 LicenseFile=license.txt
@@ -33,16 +33,16 @@ Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
 [Tasks]
 
 [Dirs]
-Name: "{app}\base"
+Name: "{app}"
 
 [Files]
 Source: ".\vbRuntime\vbrun60.exe"; Flags: dontcopy
 Source: ".\support\MDAC_TYP.EXE"; Flags: dontcopy
-Source: ".\base\base.mdb"; DestDir: "{app}\base\"; Flags: ignoreversion recursesubdirs
 Source: ".\dll\mscomm32.ocx"; DestDir: "{commonpf32}\{#MyAppName}"; Flags: restartreplace ignoreversion regserver 32bit
 Source: ".\dll\msdatgrd.ocx"; DestDir: "{commonpf32}\{#MyAppName}"; Flags: restartreplace ignoreversion regserver 32bit
 Source: ".\BellPro.exe"; DestDir: "{commonpf32}\{#MyAppName}"; Flags: ignoreversion
 Source: ".\config.ini"; DestDir: "{commonpf32}\{#MyAppName}"; Flags: ignoreversion
+Source: ".\base.sqlite"; DestDir: "{commonpf32}\{#MyAppName}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"

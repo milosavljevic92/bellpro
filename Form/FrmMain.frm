@@ -80,7 +80,7 @@ Begin VB.Form FrmMain
    Begin VB.PictureBox StatusBar1 
       Align           =   2  'Align Bottom
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Arial"
          Size            =   8.25
          Charset         =   238
          Weight          =   400
@@ -336,15 +336,13 @@ If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
     Dim boolTemp As Boolean
     Dim demoString As String
     Set Konekcija = New ADODB.Connection
-    boolTemp = checkDoesDBexist(App.Path & "\base\Base.mdb")
+    boolTemp = checkDoesDBexist(App.Path & "\base.sqlite")
     If boolTemp = False Then
         MsgBox "Baza podataka ne postoji!" & vbNewLine & "Pozovite tehnicku podrsku kako bih resili ovaj problem.", vbCritical
         End
     End If
     Konekcija.CursorLocation = adUseClient
-    Konekcija.Open "Provider=Microsoft.Jet.OLEDB.4.0;" & _
-    "Data Source=" & App.Path & "\base\Base.mdb;" & _
-    "Jet OLEDB:Database Password=dati159"
+    Konekcija.Open "Driver={SQLite3 ODBC Driver};Database=" & App.Path & "\base.sqlite;" & ";"
     
     With IconData
         .cbSize = Len(IconData)
